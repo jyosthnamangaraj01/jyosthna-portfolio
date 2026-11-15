@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+
+  <!-- ========== CSS ========== -->
+  <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:radial-gradient(circle at top,#6a11cb,#2575fc);
+}
+.weather-box{
+width:360px;
+background:rgba(255,255,255,0.18);
+backdrop-filter:blur(14px);
+border-radius:22px;
+padding:30px 25px;
+color:#fff;
+box-shadow:0 15px 40px rgba(0,0,0,0.35);
+text-align:center;
+}
+.weather-box h1{font-size:28px;margin-bottom:18px}
+.search{display:flex;gap:10px}
+.search input{
+flex:1;
+padding:12px;
+border-radius:12px;
+border:none;
+outline:none;
+font-size:15px
+}
+.search button{
+padding:12px 18px;
+border-radius:12px;
+border:none;
+background:#fff;
+color:#2575fc;
+font-weight:600;
+cursor:pointer;
+transition:.3s
+}
+.search button:hover{background:#e6e6e6}
+.result{margin-top:25px;display:none}
+.temp{font-size:46px;font-weight:600}
+.city{font-size:18px;opacity:.9;margin-top:5px}
+.desc{text-transform:capitalize;margin:8px 0}
+.info{display:flex;justify-content:space-between;margin-top:18px;font-size:14px}
+.info div{
+background:rgba(255,255,255,0.15);
+padding:10px;
+border-radius:12px;
+width:48%
+}
+.error{margin-top:15px;color:#ffeb3b;font-size:14px}
+footer{margin-top:20px;font-size:12px;opacity:.8}
+</style>
+</head>
+<body>
+
+  <div class="weather-box">
+    <h1>🌦 Weather App</h1>
+
+    <div class="search">
+      <input type="text" id="city" placeholder="Enter city name">
+      <button onclick="getWeather()">Search</button>
+    </div>
+
+    <div class="result" id="result">
+      <div class="temp" id="temp"></div>
+      <div class="desc" id="desc"></div>
+      <div class="details" id="details"></div>
+    </div>
+
+    <div class="error" id="error"></div>
+  </div>
+
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+
+    const apiKey = "722a3453285c0c897c450293578aede7"; // OpenWeatherMap API key // 👈 paste your key here
+
+    function getWeather() {
+      const city = document.getElementById("city").value;
+      const result = document.getElementById("result");
+      const error = document.getElementById("error");
+
+      if (city === "") {
+        error.innerText = "Please enter a city name";
+        result.style.display = "none";
+        return;
+      }
+
+      error.innerText = "";
+
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.trim()}&units=metric&appid=${apiKey}`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          if (data.cod === "404") {
+            error.innerText = "City not found";
+            result.style.display = "none";
+          } else {
+            document.getElementById("temp").innerText = data.main.temp + "°C";
+            document.getElementById("desc").innerText = data.weather[0].description;
+            document.getElementById("details").innerText =
+              `Humidity: ${data.main.humidity}% | Wind: ${data.wind.speed} m/s`;
+
+            result.style.display = "block";
+          }
+        })
+        .catch(() => {
+          error.innerText = "Something went wrong";
+        });
+    }
+  </script>
+
+</body>
+</html>
+

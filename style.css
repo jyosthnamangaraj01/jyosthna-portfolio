@@ -1,0 +1,845 @@
+
+/* ==========================================
+   JYOSTHNA MANGARAJ - PERSONAL PORTFOLIO
+   Theme: Minimal | Professional | Blue
+========================================== */
+
+
+/* 1. GLOBAL SETTINGS
+------------------------------------------ */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --dark: #172554;
+    --heading: #0f172a;
+    --text: #475569;
+    --muted: #64748b;
+    --white: #bbbfc9;
+    --background: #f8faff;
+    --light-blue: #c9d6e8;
+    --border: #a3a6aa;
+    --shadow: 0 8px 25px rgba(15, 23, 42, 0.06);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* 2. HEADER AND NAVIGATION
+------------------------------------------ */
+
+.header {
+    width: 100%;
+    background-color: var(--white);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #edf1f7;
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1150px;
+    min-height: 78px;
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: var(--dark);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--heading);
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--primary);
+    font-size: 27px;
+    cursor: pointer;
+}
+
+
+/* 3. HERO SECTION
+------------------------------------------ */
+
+.hero {
+    min-height: 620px;
+    padding: 90px 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+
+    background-color: var(--background);
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.intro-label {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    color: var(--heading);
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: var(--primary);
+}
+
+.hero-content h2 {
+    color: var(--dark);
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hero-description {
+    max-width: 570px;
+    color: var(--text);
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.hero-image {
+    flex-shrink: 0;
+}
+
+.hero-image img {
+    width: 300px;
+    height: 390px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 60%;
+    border: 6px solid var(--white);
+    box-shadow: 0 10px 35px rgba(37, 99, 235, 0.13);
+}
+
+
+/* 4. BUTTONS
+------------------------------------------ */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 12px 23px;
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease,
+                color 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.primary-btn {
+    color: var(--white);
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+.outline-btn {
+    color: var(--primary);
+    background-color: transparent;
+    border: 1px solid var(--primary);
+}
+
+.outline-btn:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+
+/* 5. COMMON SECTION STYLING
+------------------------------------------ */
+
+.section {
+    padding: 85px 10%;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-label {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    color: var(--heading);
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.section-heading h2::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    background-color: var(--primary);
+    margin: 12px auto 0;
+    border-radius: 5px;
+}
+
+.section-description {
+    max-width: 600px;
+    margin: -15px auto 35px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+
+/* 6. ABOUT SECTION
+------------------------------------------ */
+
+.about {
+    background-color: #ffffff;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.about-content p {
+    color: var(--text);
+    font-size: 16px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+
+/* 7. SKILLS SECTION
+------------------------------------------ */
+
+.skills {
+    background-color: #eff6ff;
+}
+
+.skills-container {
+    max-width: 950px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.skill {
+    background-color: var(--white);
+    color: var(--dark);
+
+    padding: 20px 12px;
+    text-align: center;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    transition: border-color 0.2s ease,
+                color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.skill:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+
+/* 8. PROJECTS SECTION
+------------------------------------------ */
+
+.projects {
+    background-color: #f8faff;
+}
+
+.projects-container {
+    max-width: 1050px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.project-card {
+    background-color: var(--white);
+    padding: 28px;
+
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.035);
+
+    transition: border-color 0.2s ease,
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    border-color: #93b4f5;
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+}
+
+.project-number {
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    margin-bottom: 12px;
+}
+
+.project-card h3 {
+    color: var(--heading);
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.project-card > p:not(.project-number) {
+    color: var(--text);
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+
+/* Project technology tags */
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.tech-stack span {
+    display: inline-block;
+    background-color: var(--light-blue);
+    color: #1e40af;
+
+    padding: 5px 11px;
+    border-radius: 4px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/* Project links */
+
+.project-link {
+    display: inline-block;
+    margin-top: 22px;
+
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 700;
+
+    transition: color 0.2s ease;
+}
+
+.project-link:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+
+/* 9. EDUCATION SECTION
+------------------------------------------ */
+
+.education {
+    background-color: #eff6ff;
+}
+
+.education-content {
+    max-width: 550px;
+    margin: auto;
+
+    padding: 28px;
+    text-align: center;
+
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.education-content h3 {
+    color: var(--heading);
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.education-content p {
+    color: var(--text);
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+
+/* 10. CONTACT SECTION
+------------------------------------------ */
+
+.contact {
+    background-color: #f8faff;
+}
+
+.contact-description {
+    max-width: 650px;
+    margin: -15px auto 45px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.contact-container {
+    max-width: 1050px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: start;
+    gap: 50px;
+}
+
+
+/* Contact information */
+
+.contact-info {
+    padding: 20px 5px;
+    text-align: left;
+}
+
+.contact-info h3 {
+    color: var(--heading);
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.contact-info > p {
+    color: var(--text);
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-detail {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.contact-detail strong {
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.contact-detail p {
+    color: var(--text);
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+
+/* Contact form card */
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 32px;
+
+    background-color: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* Form labels */
+
+.contact-form label {
+    color: var(--heading);
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+
+/* Form input fields */
+
+.contact-form input:not([type="hidden"]):not([name="_honey"]),
+.contact-form textarea {
+    width: 100%;
+    padding: 13px 14px;
+
+    background-color: #fbfdff;
+    color: var(--heading);
+
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+
+/* Input focus */
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10);
+    background-color: var(--white);
+}
+
+
+/* Placeholder */
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #94a3b8;
+}
+
+
+/* Message area */
+
+.contact-form textarea {
+    min-height: 145px;
+    resize: vertical;
+}
+
+
+/* Submit button */
+
+.contact-form button {
+    align-self: flex-start;
+    margin-top: 12px;
+    cursor: pointer;
+}
+
+
+/* 11. FOOTER
+------------------------------------------ */
+
+.footer {
+    padding: 24px 5%;
+    background-color: var(--dark);
+    color: #cbd5e1;
+    text-align: center;
+    font-size: 13px;
+}
+
+
+/* 12. RESPONSIVE DESIGN - TABLET
+------------------------------------------ */
+
+@media (max-width: 900px) {
+
+    .hero {
+        padding: 75px 6%;
+        gap: 35px;
+    }
+
+    .hero-image img {
+        width: 240px;
+        height: 240px;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .section {
+        padding: 75px 6%;
+    }
+
+    .contact-container {
+        gap: 30px;
+    }
+
+}
+
+
+/* 13. RESPONSIVE DESIGN - MOBILE
+------------------------------------------ */
+
+@media (max-width: 650px) {
+
+    /* Navbar */
+
+    .navbar {
+        min-height: 68px;
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        width: 100%;
+        padding: 18px 0 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: auto;
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 65px 6%;
+        gap: 30px;
+    }
+
+    .hero-image img {
+        width: 205px;
+        height: 205px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content h2 {
+        font-size: 21px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+
+    /* Common sections */
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+
+    /* Skills */
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 13px;
+    }
+
+
+    /* Projects */
+
+    .projects-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .project-card {
+        padding: 24px;
+    }
+
+
+    /* About */
+
+    .about-content p {
+        font-size: 15px;
+    }
+
+
+    /* Contact */
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .contact-info {
+        padding: 5px 0;
+    }
+
+    .contact-form {
+        padding: 24px 20px;
+    }
+
+    .contact-form button {
+        width: 100%;
+    }
+
+}
+
+
+/* 14. VERY SMALL SCREENS
+------------------------------------------ */
+
+@media (max-width: 380px) {
+
+    .hero-content h1 {
+        font-size: 31px;
+    }
+
+    .hero-image img {
+        width: 180px;
+        height: 180px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .contact-form {
+        padding: 20px 15px;
+    }
+
+}
+
+
+/* 15. ACCESSIBILITY
+------------------------------------------ */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.4);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+
+}
